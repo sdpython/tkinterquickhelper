@@ -8,7 +8,7 @@ README
     :target: https://travis-ci.org/sdpython/tkinterquickhelper
     :alt: Build status
 
-.. image:: https://ci.appveyor.com/api/projects/status/t2g9olcgqgdvqq3l?svg=true
+.. image:: https://ci.appveyor.com/api/projects/status/pa7r09m6ihvif3x6?svg=true
     :target: https://ci.appveyor.com/project/sdpython/tkinterquickhelper
     :alt: Build Status Windows
 
@@ -38,9 +38,6 @@ README
     :alt: Waffle
     :target: https://waffle.io/sdpython/tkinterquickhelper
 
-.. image:: https://api.codacy.com/project/badge/Grade/793ffca6089d4d02b8292a50df74a8a4
-    :target: https://www.codacy.com/app/sdpython/tkinterquickhelper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sdpython/tkinterquickhelper&amp;utm_campaign=Badge_Grade
-    :alt: Codacy Badge
 
 **Links:**
 
