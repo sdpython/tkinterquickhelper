@@ -49,4 +49,3 @@ README
 * `Blog <http://www.xavierdupre.fr/app/tkinterquickhelper/helpsphinx/blog/main_0000.html#ap-main-0>`_
 
 This modules implements a couple of custom windows with *tkinter*.
-
