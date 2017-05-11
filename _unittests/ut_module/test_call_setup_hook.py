@@ -20,6 +20,23 @@ except ImportError:
         sys.path.append(path)
     import src
 
+try:
+    import pyquickhelper as skip_
+except ImportError:
+    path = os.path.normpath(
+        os.path.abspath(
+            os.path.join(
+                os.path.split(__file__)[0],
+                "..",
+                "..",
+                "..",
+                "pyquickhelper",
+                "src")))
+    if path not in sys.path:
+        sys.path.append(path)
+    import pyquickhelper as skip_
+
+
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper import __file__ as PYQ
 from pyquickhelper.pycode.call_setup_hook import call_setup_hook, call_setup_hook_cmd
@@ -33,13 +50,13 @@ class TestCallSetupHook(unittest.TestCase):
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
         cmd, code = call_setup_hook_cmd(
-            "c:/__MOCK__", "pyquickhelper", interpreter_path="__PYTHON__")
+            "c:/__MOCK__", "tkinterquickhelper", interpreter_path="__PYTHON__")
         pyq = os.path.normpath(os.path.join(os.path.abspath(PYQ), "..", ".."))
         exp = '''__PYTHON__ -c "import sys;sys.path.append('c:/__MOCK__/src');sys.path.append('__PYQ__');''' + \
-              '''from pyquickhelper import _setup_hook;_setup_hook();sys.exit(0)"'''
+              '''from tkinterquickhelper import _setup_hook;_setup_hook();sys.exit(0)"'''
         exp = exp.replace("__PYQ__", pyq.replace("\\", "/"))
-        cmd = cmd.replace("/home/travis/build/sdpython/pyquickhelper/", "")
-        exp = exp.replace("/home/travis/build/sdpython/pyquickhelper/", "")
+        cmd = cmd.replace("/home/travis/build/sdpython/tkinterquickhelper/", "")
+        exp = exp.replace("/home/travis/build/sdpython/tkinterquickhelper/", "")
         if exp != cmd:
             raise Exception("\nCMD: {0}\nEXP: {1}".format(cmd, exp))
 
@@ -53,14 +70,14 @@ class TestCallSetupHook(unittest.TestCase):
             "..",
             "..")
         out, err = call_setup_hook(
-            init, "pyquickhelper", fLOG=fLOG, function_name="______")
+            init, "tkinterquickhelper", fLOG=fLOG, function_name="______")
         fLOG(err)
         fLOG(out)
         if not(err == "no ______" or "linux" in out):
             raise Exception("OUT:\n{0}\nERR:\n{1}".format(out, err))
 
         out, err = call_setup_hook(
-            init, "pyquickhelper", fLOG=fLOG, use_print=False)
+            init, "tkinterquickhelper", fLOG=fLOG, use_print=False)
         fLOG(err)
         fLOG(out)
         self.assertEqual(err, "")
