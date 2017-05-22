@@ -8,7 +8,7 @@ README
     :target: https://travis-ci.org/sdpython/tkinterquickhelper
     :alt: Build status
 
-.. image:: https://ci.appveyor.com/api/projects/status/pa7r09m6ihvif3x6?svg=true
+.. image:: https://ci.appveyor.com/api/projects/status/oqqayew2qan2bh6h?svg=true
     :target: https://ci.appveyor.com/project/sdpython/tkinterquickhelper
     :alt: Build Status Windows
 
