@@ -32,6 +32,7 @@ python-jenkins
 PyYAML
 semantic_version
 setuptools
+solar-theme
 Sphinx
 sphinx-better-theme
 sphinx-gallery
