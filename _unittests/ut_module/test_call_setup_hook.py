@@ -57,6 +57,8 @@ class TestCallSetupHook(unittest.TestCase):
         exp = exp.replace("__PYQ__", pyq.replace("\\", "/"))
         cmd = cmd.replace("/home/travis/build/sdpython/tkinterquickhelper/", "")
         exp = exp.replace("/home/travis/build/sdpython/tkinterquickhelper/", "")
+        cmd = cmd.replace("/home/circleci/repo/", "")
+        exp = exp.replace("/home/circleci/repo/", "")
         if exp != cmd:
             raise Exception("\nCMD: {0}\nEXP: {1}".format(cmd, exp))
 

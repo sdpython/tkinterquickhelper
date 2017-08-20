@@ -14,6 +14,9 @@ README
         :target: https://ci.appveyor.com/project/sdpython/tkinterquickhelper
         :alt: Build Status Windows
 
+    .. image:: https://circleci.com/gh/sdpython/tkinterquickhelper/tree/master.svg?style=svg
+        :target: https://circleci.com/gh/sdpython/tkinterquickhelper/tree/master
+
     .. image:: https://badge.fury.io/py/tkinterquickhelper.svg
         :target: http://badge.fury.io/py/tkinterquickhelper
 
