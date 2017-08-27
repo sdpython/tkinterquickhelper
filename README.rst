@@ -43,7 +43,6 @@ README
     .. image:: https://codecov.io/github/sdpython/tkinterquickhelper/coverage.svg?branch=master
         :target: https://codecov.io/github/sdpython/tkinterquickhelper?branch=master
 
-
 **Links:**
 
 * `GitHub/tkinterquickhelper <https://github.com/sdpython/tkinterquickhelper>`_

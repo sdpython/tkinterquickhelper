@@ -55,8 +55,10 @@ class TestCallSetupHook(unittest.TestCase):
         exp = '''__PYTHON__ -c "import sys;sys.path.append('c:/__MOCK__/src');sys.path.append('__PYQ__');''' + \
               '''from tkinterquickhelper import _setup_hook;_setup_hook();sys.exit(0)"'''
         exp = exp.replace("__PYQ__", pyq.replace("\\", "/"))
-        cmd = cmd.replace("/home/travis/build/sdpython/tkinterquickhelper/", "")
-        exp = exp.replace("/home/travis/build/sdpython/tkinterquickhelper/", "")
+        cmd = cmd.replace(
+            "/home/travis/build/sdpython/tkinterquickhelper/", "")
+        exp = exp.replace(
+            "/home/travis/build/sdpython/tkinterquickhelper/", "")
         cmd = cmd.replace("/home/circleci/repo/", "")
         exp = exp.replace("/home/circleci/repo/", "")
         if exp != cmd:

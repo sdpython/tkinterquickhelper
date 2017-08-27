@@ -41,7 +41,6 @@ tkinterquickhelper documentation
         :alt: Waffle
         :target: https://waffle.io/sdpython/tkinterquickhelper
 
-
 **Links:** `pypi <https://pypi.python.org/pypi/tkinterquickhelper/>`_,
 `github <https://github.com/sdpython/tkinterquickhelper>`_,
 `documentation <http://www.xavierdupre.fr/app/tkinterquickhelper/helpsphinx/index.html>`_,
@@ -55,6 +54,11 @@ What is it?
 -----------
 
 It implements custom windows with tkinter.
+
+.. toctree::
+    :maxdepth: 1
+
+    blog/blogindex
 
 Installation
 ------------
