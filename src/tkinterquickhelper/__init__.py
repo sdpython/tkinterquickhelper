@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Main files, contains the version, the url to the documention.
+@file
+@brief Module *tkinterquickhelper*.
+Helpers for :epkg:`*py:tkinter`.
 """
 
 __version__ = "1.5"
