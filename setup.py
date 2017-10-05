@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import print_function
 import sys
 import os
 
@@ -24,7 +23,6 @@ KEYWORDS = project_var_name + \
 DESCRIPTION = "Helpers for tkinter, extra windows."
 CLASSIFIERS = [
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 2.7',
     'Intended Audience :: Developers',
     'Topic :: Scientific/Engineering',
     'Topic :: Education',
@@ -38,8 +36,7 @@ CLASSIFIERS = [
 
 packages = find_packages('src', exclude='src')
 package_dir = {k: "src/" + k.replace(".", "/") for k in packages}
-package_data = {project_var_name + ".funcwin": ["*.ico"],
-                }
+package_data = {project_var_name + ".funcwin": ["*.ico"]}
 
 ############
 # functions
@@ -79,7 +76,10 @@ def is_local():
        "setup_hook" in sys.argv or \
        "copy_sphinx" in sys.argv or \
        "write_version" in sys.argv:
-        import_pyquickhelper()
+        try:
+            import_pyquickhelper()
+        except ImportError:
+            return False
         return True
     else:
         return False
@@ -197,6 +197,10 @@ if not r:
         pyquickhelper = import_pyquickhelper()
         from pyquickhelper.pycode import process_standard_options_for_setup_help
         process_standard_options_for_setup_help(sys.argv)
+    else:
+        pyquickhelper = import_pyquickhelper()
+    from pyquickhelper.pycode import clean_readme
+    long_description = clean_readme(long_description)
 
     setup(
         name=project_var_name,
