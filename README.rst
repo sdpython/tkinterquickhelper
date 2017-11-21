@@ -24,10 +24,6 @@ README
         :alt: MIT License
         :target: http://opensource.org/licenses/MIT
 
-    .. image:: https://landscape.io/github/sdpython/tkinterquickhelper/master/landscape.svg?style=flat
-       :target: https://landscape.io/github/sdpython/tkinterquickhelper/master
-       :alt: Code Health
-
     .. image:: http://img.shields.io/github/issues/sdpython/tkinterquickhelper.png
         :alt: GitHub Issues
         :target: https://github.com/sdpython/tkinterquickhelper/issues
