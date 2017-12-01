@@ -21,8 +21,9 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper import __version__
+
 from pyquickhelper.loghelper import fLOG
+from src.tkinterquickhelper import __version__
 
 
 class TestVersion (unittest.TestCase):
