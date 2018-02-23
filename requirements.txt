@@ -1,6 +1,5 @@
 coverage
 jyquickhelper
-
-pyquickhelper>=1.5.2215
+pyquickhelper>=1.7
 solar-theme
 wheel
