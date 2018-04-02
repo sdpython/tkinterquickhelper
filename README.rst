@@ -30,7 +30,7 @@ README
      :target: https://requires.io/github/sdpython/tkinterquickhelper/requirements/?branch=master
      :alt: Requirements Status
 
-.. image:: https://badge.waffle.io/sdpython/tkinterquickhelper.png?label=ready&title=Ready
+.. image:: https://badge.waffle.io/sdpython/tkinterquickhelper.png?label=to%20do&title=to%20do
     :alt: Waffle
     :target: https://waffle.io/sdpython/tkinterquickhelper
 
