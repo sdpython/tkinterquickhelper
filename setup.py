@@ -43,28 +43,6 @@ package_data = {project_var_name + ".funcwin": ["*.ico"]}
 ############
 
 
-def is_local():
-    file = os.path.abspath(__file__).replace("\\", "/").lower()
-    if "/temp/" in file and "pip-" in file:
-        return False
-    for cname in {"bdist_msi", "build27", "build_script", "build_sphinx", "build_ext",
-                  "bdist_wheel", "bdist_egg", "bdist_wininst", "clean_pyd", "clean_space",
-                  "copy27", "copy_dist", "local_pypi", "notebook", "publish", "publish_doc",
-                  "register", "unittests", "unittests_LONG", "unittests_SKIP", "unittests_GUI",
-                  "run27", "sdist", "setupdep", "test_local_pypi", "upload_docs", "setup_hook",
-                  "copy_sphinx", "write_version", "lab"}:
-        if cname in sys.argv:
-            try:
-                import_pyquickhelper()
-            except ImportError:
-                return False
-            return True
-    else:
-        return False
-
-    return False
-
-
 def ask_help():
     return "--help" in sys.argv or "--help-commands" in sys.argv
 
@@ -91,6 +69,15 @@ def import_pyquickhelper():
                 os.getcwd())
             raise ImportError(message) from e
     return pyquickhelper
+
+
+def is_local():
+    file = os.path.abspath(__file__).replace("\\", "/").lower()
+    if "/temp/" in file and "pip-" in file:
+        return False
+    import_pyquickhelper()
+    from pyquickhelper.pycode.setup_helper import available_commands_list
+    return available_commands_list(sys.argv)
 
 
 def verbose():
@@ -168,7 +155,8 @@ if is_local():
         requirements=["pyquickhelper"],
         additional_notebook_path=["pyquickhelper"],
         unittest_modules=["pyquickhelper"],
-        fLOG=logging_function, covtoken=("7809a446-a94a-4155-833d-091ad8f63367", "'_UT_36_std' in outfile"))
+        fLOG=logging_function, github_owner="sdpython",
+        covtoken=("7809a446-a94a-4155-833d-091ad8f63367", "'_UT_36_std' in outfile"))
     if not r and not ({"bdist_msi", "sdist",
                        "bdist_wheel", "publish", "publish_doc", "register",
                        "upload_docs", "bdist_wininst", "build_ext"} & set(sys.argv)):
