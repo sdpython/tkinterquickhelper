@@ -65,7 +65,8 @@ def extract_function_information(function):
     """
     if function.__doc__ is None:
         raise Exception("the function given to FrameFunction should be documented: help is displayed,"
-                        " if you want parameter to be described, use javadoc format to do so: @<tag>  param_name  param_meaning with tag=param")
+                        " if you want parameter to be described, use javadoc format to do so: "
+                        "@<tag>  param_name  param_meaning with tag=param")
 
     res = dict()
     res["name"] = function.__name__

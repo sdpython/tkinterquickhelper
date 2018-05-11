@@ -15,6 +15,9 @@ else:
 
 
 def X_is_running():
+    """
+    Checks that *X* is running.
+    """
     from subprocess import Popen, PIPE
     try:
         p = Popen(["xset", "-q"], stdout=PIPE, stderr=PIPE)

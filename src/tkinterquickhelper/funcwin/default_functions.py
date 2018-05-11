@@ -44,11 +44,9 @@ def _get_format_zero_nb_integer(nb):
     return "%0" + typstr(int(c)) + "d"
 
 
-def test_regular_expression(exp=".*",
-                            text="",
-                            fLOG=fLOG):
+def test_regular_expression(exp=".*", text="", fLOG=fLOG):
     """
-    test a regular expression
+    Tests a regular expression.
     @param      exp     regular expression
     @param      text    text to check
     @param      fLOG    logging function
@@ -116,13 +114,9 @@ def file_head(file="",
     return out
 
 
-def file_split(file="",
-               nb=2,
-               out="",
-               header=False,
-               rnd=False):
+def file_split(file="", nb=2, out="", header=False, rnd=False):
     """
-    keep the head of a file
+    Keeps the head of a file.
 
     @param      file        file name or stream
     @param      nb          number of files
@@ -147,7 +141,9 @@ def file_split(file="",
     f = open(file, "r") if isinstance(file, typstr) else file
     g = {}
     tot = 0
+    last_line = 0
     for i, line in enumerate(f):
+        last_line = i
         if i == 0 and header:
             for n in range(0, nb):
                 if n not in g:
@@ -186,7 +182,7 @@ def file_split(file="",
     for k, v in g.items():
         if not isinstance(out, list) or isinstance(out[k], typstr):
             v.close()
-    return i
+    return last_line
 
 
 def file_list(folder, out=""):
@@ -245,7 +241,7 @@ def file_grep(file="",
     f = open(file, "r")
     g = open(out, "w")
     nb = 0
-    for i, line in enumerate(f):
+    for line in f:
         if exp.search(line):
             g.write(line)
             nb += 1

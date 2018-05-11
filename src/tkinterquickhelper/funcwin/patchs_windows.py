@@ -45,11 +45,11 @@ def fix_python35_dll(path1, path2, force=False):
         ext = os.path.splitext(f)[-1]
         if ext == ".dll":
             full = os.path.join(path1, f)
-            for path2 in paths2s:
-                to = os.path.join(path2, f)
+            for path3 in paths2s:
+                to = os.path.join(path3, f)
                 if not os.path.exists(to):
                     copy.append(to)
-                    shutil.copy(full, path2)
+                    shutil.copy(full, path3)
 
     return copy
 

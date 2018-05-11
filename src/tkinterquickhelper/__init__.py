@@ -43,7 +43,7 @@ def check():
 
 def _setup_hook(add_print=False, unit_test=False):
     """
-    if this function is added to the module,
+    If this function is added to the module,
     the help automation and unit tests call it first before
     anything goes on as an initialization step.
     It should be run in a separate process.

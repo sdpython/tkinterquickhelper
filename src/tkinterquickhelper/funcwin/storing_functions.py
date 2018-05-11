@@ -74,8 +74,8 @@ def _private_store(function_name, param):
 
     typstr = str  # unicode#
     with open(filename, "w", encoding="utf8") as f:
-        for param in history:
-            spar = typstr(param).replace("\n", "#*###n####*#")
+        for param_ in history:
+            spar = typstr(param_).replace("\n", "#*###n####*#")
             f.write(spar + "\n")
 
 
@@ -135,7 +135,7 @@ def get_icon():
 
 def interpret_parameter(ty, s):
     """
-    interprets a parameter
+    Interprets a parameter.
 
     @param      ty      type (the return type)
     @param      s       value to interpret (a string)

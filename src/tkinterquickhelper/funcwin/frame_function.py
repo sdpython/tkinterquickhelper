@@ -3,15 +3,15 @@
 @file
 @brief  @see cl FrameFunction
 """
-from pyquickhelper.loghelper.flog import fLOG, GetLogFile
-from .tk_window import create_tk
-from .function_helper import has_unknown_parameters, extract_function_information, private_adjust_parameters, private_get_function
-from .storing_functions import _private_restore, _private_store, interpret_parameter
-
 import sys
 import os
 import inspect
 import threading
+
+from pyquickhelper.loghelper.flog import fLOG, GetLogFile
+from .tk_window import create_tk
+from .function_helper import has_unknown_parameters, extract_function_information, private_adjust_parameters, private_get_function
+from .storing_functions import _private_restore, _private_store, interpret_parameter
 
 if sys.version_info[0] == 2:
     import Tkinter as tkinter
@@ -23,8 +23,7 @@ else:
     from io import StringIO
 
 
-class FrameFunction (tkinter.Frame):
-
+class FrameFunction(tkinter.Frame):
     """
     Creating a Frame window for a function.
 
@@ -34,17 +33,9 @@ class FrameFunction (tkinter.Frame):
     This functionality is disable when 'password' is present in the list of parameters.
     """
 
-    def __init__(self, parent,
-                 function,
-                 restore=True,
-                 width=100,
-                 raise_exception=False,
-                 overwrite=None,
-                 hide=False,
-                 command_leave=None,
-                 key_save="e"):
+    def __init__(self, parent, function, restore=True, width=100, raise_exception=False,
+                 overwrite=None, hide=False, command_leave=None, key_save="e"):
         """
-        constructor
         @param      parent          window parent
         @param      function        function object (can be a string)
         @param      restore         if True, check if existing saved parameters are present
@@ -376,7 +367,7 @@ class FrameFunction (tkinter.Frame):
     def open_window(func, top_level_window=None, params=None,
                     key_save="f", do_not_open=False):
         """
-        Open a tkinter window to run a function. It adds entries for the parameters,
+        Opens a :epkg:`tkinter` window to run a function. It adds entries for the parameters,
         it displays the help associated to this function,
         and it allows use to run the function in a window frame.
         Logs are also displayed.
@@ -392,10 +383,9 @@ class FrameFunction (tkinter.Frame):
         The window looks like:
         @image images/open_window_function.png
 
-        Example:
-        @code
-        FrameFunction.open_window (file_head)
-        @endcode
+        Example::
+
+            FrameFunction.open_window (file_head)
 
         .. versionadded:: 1.0
             Parameter *do_not_open* was added.
@@ -419,6 +409,7 @@ class FrameFunction (tkinter.Frame):
             return fr
         else:
             fr.mainloop()
+            return None
 
 
 class FrameFunction_ThreadFunction (threading.Thread):

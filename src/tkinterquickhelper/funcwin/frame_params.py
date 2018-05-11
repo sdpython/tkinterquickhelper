@@ -4,22 +4,21 @@
 
 @brief  defines @see cl FrameParams
 """
+import sys
+import os
 from .tk_window import create_tk
 from .function_helper import private_adjust_parameters
 from .storing_functions import _private_restore, _private_store, interpret_parameter
 
-import sys
-import os
 if sys.version_info[0] == 2:
     import Tkinter as tkinter
 else:
     import tkinter
 
 
-class FrameParams (tkinter.Frame):
-
+class FrameParams(tkinter.Frame):
     """
-    creating a Frame window for a list of parameters
+    Creates a Frame window for a list of parameters
     """
 
     def __init__(self, parent,
@@ -31,7 +30,6 @@ class FrameParams (tkinter.Frame):
                  key_save="",
                  command_leave=None):
         """
-        constructor
         @param      parent          window parent
         @param      restore         if True, check if existing saved parameters are present
         @param      width           number of characters in every Entry field
@@ -222,31 +220,28 @@ class FrameParams (tkinter.Frame):
 
     def get_title(self):
         """
-        return the title
+        Returns the title.
 
-        @return self.info ["name"]
+        @return ``self.info ["name"]``
         """
         return self.info["name"]
 
     def refresh(self):
         """
-        refresh the screen
+        Refreshes the screen.
         """
         if self._already:
             self.after(1000, self.refresh)
         else:
             self.run.config(state=tkinter.NORMAL)
-            if True:
-                self.parent.destroy()
+            self.parent.destroy()
 
     def run_function(self, *args):
         """
-        run the function
+        Runs the function.
         """
-        if True:
-            self.parent.withdraw()
-        else:
-            self.run.config(state=tkinter.DISABLED)
+        self.parent.withdraw()
+        # self.run.config(state=tkinter.DISABLED)
         self._already = True
 
         res = self.get_parameters()
@@ -265,7 +260,7 @@ class FrameParams (tkinter.Frame):
                     key_save="",
                     do_not_open=False):
         """
-        Open a tkinter window to set up parameters.
+        Opens a :pkg:`tkinter` window to set up parameters.
         It adds entries for the parameters,
         it displays the help given to this function.
         It also memorizes the latest values used (stored in ``<user>/TEMP folder``).
@@ -284,11 +279,10 @@ class FrameParams (tkinter.Frame):
         The window looks like:
         @image images/open_window_params.png
 
-        Example:
-        @code
-        params =  {"velib_key": "", "contract":"Paris"}
-        newparams = FrameParams.open_window (params, "fetch data from Velib website")
-        @endcode
+        Example::
+
+            params =  {"velib_key": "", "contract":"Paris"}
+            newparams = FrameParams.open_window (params, "fetch data from Velib website")
 
         .. versionchanged:: 1.0
             Parameter *do_not_open* was added.

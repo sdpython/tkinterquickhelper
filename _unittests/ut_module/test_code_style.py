@@ -57,8 +57,26 @@ class TestCodeStyle(unittest.TestCase):
 
         thi = os.path.abspath(os.path.dirname(__file__))
         src_ = os.path.normpath(os.path.join(thi, "..", "..", "src"))
-        check_pep8(src_, fLOG=fLOG, skip=["tp_transfer_files.py:376: [E731]",
-                                          "_nbconvert_config.py:"])
+        check_pep8(src_, fLOG=fLOG,
+                   pylint_ignore=('C0103', 'C1801',
+                                  'E0203',
+                                  'R0201', 'R0901', 'R0902', 'R0911', 'R0912',
+                                  'R0913', 'R0914', 'R0915', 'R1702', 'R1705',
+                                  'W0613',
+                                  'W0123', 'W0212', 'W0703', 'W0201'),
+                   skip=["tp_transfer_files.py:376: [E731]",
+                         "_nbconvert_config.py:",
+                         "Redefining built-in 'open'",
+                         "Redefining built-in 'help'",
+                         #
+                         "Uses of a deprecated module 'tkinter.tix'",
+                         "Unable to import 'Tix'",
+                         "Redefining name 'fLOG'",
+                         "Unable to import 'tkFont'",
+                         "Unable to import 'StringIO'",
+                         "tk_window.py:56",
+                         "tk_window.py:68",
+                         "function_helper.py:122"])
 
     def test_code_style_test(self):
         fLOG(
@@ -74,13 +92,26 @@ class TestCodeStyle(unittest.TestCase):
 
         thi = os.path.abspath(os.path.dirname(__file__))
         test = os.path.normpath(os.path.join(thi, "..", ))
-        check_pep8(test, fLOG=fLOG, neg_filter="temp_.*",
+        check_pep8(test, fLOG=fLOG, neg_pattern="temp_.*",
+                   max_line_length=200,
+                   pylint_ignore=('C0111', 'C0103', 'R0914', 'W0212', 'C0413', 'W0621',
+                                  'W0703', 'W0622', 'W0122', 'R0912', 'R0201',
+                                  'R0915', 'C1801'),
                    skip=["src' imported but unused",
                          "skip_' imported but unused",
                          "skip__' imported but unused",
                          "skip___' imported but unused",
-                         "2test_download_pip.py",
                          "[E402] module ",
+                         "Unused import src",
+                         "Unused variable 'skip_",
+                         "imported as skip_",
+                         "Unable to import 'StringIO'",
+                         "Redefining built-in 'open'",
+                         "Unused variable 'fig'",
+                         "Redefining built-in 'FileNotFoundError'",
+                         "Imports from package src are not grouped",
+                         #
+                         "test_windows_autopy3.py:",
                          ])
 
 
