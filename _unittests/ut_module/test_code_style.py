@@ -76,7 +76,8 @@ class TestCodeStyle(unittest.TestCase):
                          "Unable to import 'StringIO'",
                          "tk_window.py:56",
                          "tk_window.py:68",
-                         "function_helper.py:122"])
+                         "function_helper.py:122",
+                         "Unable to import 'Tkinter'"])
 
     def test_code_style_test(self):
         fLOG(
@@ -110,8 +111,8 @@ class TestCodeStyle(unittest.TestCase):
                          "Unused variable 'fig'",
                          "Redefining built-in 'FileNotFoundError'",
                          "Imports from package src are not grouped",
-                         #
                          "test_windows_autopy3.py:",
+                         "Unable to import 'Tkinter'",
                          ])
 
 
