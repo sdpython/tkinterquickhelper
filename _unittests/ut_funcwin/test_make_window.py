@@ -4,6 +4,7 @@
 import os
 import sys
 import unittest
+from pyquickhelper.loghelper.flog import fLOG
 
 try:
     import src
@@ -18,7 +19,6 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper.flog import fLOG
 from src.tkinterquickhelper.funcwin.storing_functions import get_icon
 from src.tkinterquickhelper.funcwin import open_window_function, open_window_params
 from src.tkinterquickhelper.funcwin.default_functions import test_regular_expression

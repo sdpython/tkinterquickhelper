@@ -5,6 +5,9 @@
 import sys
 import os
 import unittest
+from pyquickhelper.loghelper import fLOG
+from pyquickhelper.pycode import get_temp_folder
+from pyquickhelper.pycode.venv_helper import check_readme_syntax
 
 try:
     import src
@@ -18,10 +21,6 @@ except ImportError:
     if path not in sys.path:
         sys.path.append(path)
     import src
-
-from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder
-from pyquickhelper.pycode.venv_helper import check_readme_syntax
 
 
 if sys.version_info[0] == 2:

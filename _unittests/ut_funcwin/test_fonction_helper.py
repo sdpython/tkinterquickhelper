@@ -5,6 +5,7 @@ import os
 import sys
 import unittest
 import datetime
+from pyquickhelper.loghelper.flog import fLOG
 
 try:
     import src
@@ -19,7 +20,6 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper.flog import fLOG
 from src.tkinterquickhelper.funcwin.function_helper import extract_function_information
 from src.tkinterquickhelper.funcwin.default_functions import file_grep
 from src.tkinterquickhelper import check

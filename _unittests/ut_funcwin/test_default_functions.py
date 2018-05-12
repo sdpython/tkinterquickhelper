@@ -4,6 +4,8 @@
 import os
 import sys
 import unittest
+from pyquickhelper.loghelper import fLOG, noLOG
+from pyquickhelper.pycode import get_temp_folder
 
 
 try:
@@ -19,8 +21,6 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper import fLOG, noLOG
-from pyquickhelper.pycode import get_temp_folder
 from src.tkinterquickhelper.funcwin.default_functions import test_regular_expression, is_empty_string, IsEmptyString, file_head, file_grep
 
 

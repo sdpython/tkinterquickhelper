@@ -6,6 +6,7 @@ import sys
 import os
 import unittest
 import re
+from pyquickhelper.loghelper import fLOG
 
 
 try:
@@ -22,7 +23,6 @@ except ImportError:
     import src
 
 
-from pyquickhelper.loghelper import fLOG
 from src.tkinterquickhelper import __version__
 
 

@@ -7,6 +7,8 @@ import unittest
 import warnings
 import threading
 import time
+from pyquickhelper.loghelper.flog import fLOG
+from pyquickhelper.pycode import get_temp_folder
 
 
 if sys.version_info[0] == 2:
@@ -27,14 +29,12 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper.flog import fLOG
-from pyquickhelper.pycode import get_temp_folder
 from src.tkinterquickhelper.funcwin import main_loop_functions
 
 
 def my_tst_function2(a, b):
     """
-    return a+b
+    Returns *a+b*.
     @param      a   (float) float
     @param      b   (float) float
     @return         a+b

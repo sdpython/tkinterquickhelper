@@ -4,6 +4,8 @@
 import os
 import sys
 import unittest
+from pyquickhelper.loghelper import fLOG
+from pyquickhelper.pycode import get_temp_folder
 
 try:
     import src
@@ -18,8 +20,6 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder
 from src.tkinterquickhelper.funcwin import fix_python35_dll
 
 

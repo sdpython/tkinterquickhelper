@@ -6,6 +6,7 @@ import sys
 import unittest
 import io
 import warnings
+from pyquickhelper.loghelper import fLOG
 
 
 try:
@@ -21,7 +22,6 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper import fLOG
 from src.tkinterquickhelper.funcwin.default_functions import _clean_name_variable, _get_format_zero_nb_integer, file_list, file_split
 
 

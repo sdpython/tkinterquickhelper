@@ -5,6 +5,8 @@ import os
 import sys
 import unittest
 import warnings
+from pyquickhelper.loghelper.flog import fLOG
+from pyquickhelper.pycode import fix_tkinter_issues_virtualenv
 
 if sys.version_info[0] == 2:
     from Tkinter import TclError
@@ -24,15 +26,13 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper.flog import fLOG
-from pyquickhelper.pycode import fix_tkinter_issues_virtualenv
 from src.tkinterquickhelper.funcwin import open_window_params, open_window_function
 from src.tkinterquickhelper.funcwin.function_helper import get_function_list, private_get_function
 
 
 def my_tst_function(a, b):
     """
-    return a+b
+    Returns *a+b*.
     @param      a   (float) float
     @param      b   (float) float
     @return         a+b

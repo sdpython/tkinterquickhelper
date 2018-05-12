@@ -6,6 +6,7 @@ import os
 import sys
 import unittest
 import warnings
+from pyquickhelper.loghelper.flog import fLOG
 
 if sys.version_info[0] == 2:
     from Tkinter import TclError
@@ -25,7 +26,6 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper.flog import fLOG
 from src.tkinterquickhelper.funcwin.default_functions import test_regular_expression, file_grep, file_head
 from src.tkinterquickhelper.funcwin.main_window import main_loop_functions
 

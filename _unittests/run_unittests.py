@@ -3,23 +3,10 @@
 @brief run all unit tests
 """
 
-import os
-import sys
-
-
 def main():
-    try:
-        import pyquickhelper as skip_
-    except ImportError:
-        sys.path.append(
-            os.path.normpath(
-                os.path.abspath(
-                    os.path.join(
-                        os.path.split(__file__)[0],
-                        "..",
-                        "src"))))
-        import pyquickhelper as skip_
-
+    """
+    Runs the unit tests.
+    """
     from pyquickhelper.loghelper import fLOG
     from pyquickhelper.pycode import main_wrapper_tests
     fLOG(OutputPrint=True)
