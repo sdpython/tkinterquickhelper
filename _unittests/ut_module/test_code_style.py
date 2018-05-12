@@ -93,7 +93,6 @@ class TestCodeStyle(unittest.TestCase):
                          "Redefining built-in 'open'",
                          "Unused variable 'fig'",
                          "Redefining built-in 'FileNotFoundError'",
-                         "Imports from package src are not grouped",
                          "test_windows_autopy3.py:",
                          "Unable to import 'Tkinter'",
                          ])
