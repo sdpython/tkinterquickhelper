@@ -86,8 +86,6 @@ class TestCodeStyle(unittest.TestCase):
                          "skip__' imported but unused",
                          "skip___' imported but unused",
                          "[E402] module ",
-                         "Unused import src",
-                         "Unused variable 'skip_",
                          "imported as skip_",
                          "Unable to import 'StringIO'",
                          "Redefining built-in 'open'",
@@ -95,6 +93,7 @@ class TestCodeStyle(unittest.TestCase):
                          "Redefining built-in 'FileNotFoundError'",
                          "test_windows_autopy3.py:",
                          "Unable to import 'Tkinter'",
+                         "Unused import src",
                          ])
 
 
