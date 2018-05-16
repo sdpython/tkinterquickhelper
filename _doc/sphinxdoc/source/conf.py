@@ -5,24 +5,11 @@
 """
 import sys
 import os
-import datetime
-import re
 import solar_theme
+from pyquickhelper.helpgen.default_conf import set_sphinx_variables
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0])))
-sys.path.insert(
-    0,
-    os.path.abspath(
-        os.path.join(
-            os.path.split(__file__)[0],
-            "..",
-            "..",
-            "..",
-            "..",
-            "pyquickhelper",
-            "src")))
 
-from pyquickhelper.helpgen.default_conf import set_sphinx_variables
 set_sphinx_variables(__file__, "tkinterquickhelper", "Xavier Dupré", 2018,
                      "solar_theme", solar_theme.theme_path, locals(),
                      github_repo="https://github.com/sdpython/tkinterquickhelper.git",
