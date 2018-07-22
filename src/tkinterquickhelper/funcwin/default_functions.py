@@ -216,10 +216,7 @@ def file_list(folder, out=""):
     return out
 
 
-def file_grep(file="",
-              regex=".*",
-              out="",
-              head=-1):
+def file_grep(file="", regex=".*", out="", head=-1):
     """
     grep
 
@@ -245,7 +242,7 @@ def file_grep(file="",
         if exp.search(line):
             g.write(line)
             nb += 1
-            if head >= 0 and nb >= head:
+            if nb >= head >= 0:
                 break
     f.close()
     g.close()

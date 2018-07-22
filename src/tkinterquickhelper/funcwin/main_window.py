@@ -12,10 +12,10 @@ from .storing_functions import get_icon
 
 if sys.version_info[0] == 2:
     import Tkinter as tkinter
-    import Tix as tix
+    import Tix as ttix
 else:
     import tkinter
-    import tkinter.tix as tix
+    import tkinter.tix as ttix
 
 
 class MainFrame(tkinter.Frame):
@@ -60,10 +60,10 @@ class MainFrame(tkinter.Frame):
         self.ffun.pack()
         self.parent = parent
 
-        self.varcombo = tix.StringVar()
-        self.combo = tix.ComboBox(self.fsel, editable=1, dropdown=1, variable=self.varcombo,
-                                  command=self.change_selection,
-                                  options="listbox.height %d label.width %d entry.width %d" % (25, 30, 50))
+        self.varcombo = ttix.StringVar()
+        self.combo = ttix.ComboBox(self.fsel, editable=1, dropdown=1, variable=self.varcombo,
+                                   command=self.change_selection,
+                                   options="listbox.height %d label.width %d entry.width %d" % (25, 30, 50))
         # put the text zone in read only mode
         self.combo.entry.config(state='readonly')
         for i, k in enumerate(sorted(functions)):

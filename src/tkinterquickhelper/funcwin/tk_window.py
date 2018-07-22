@@ -8,10 +8,10 @@ import sys
 
 if sys.version_info[0] == 2:
     import Tkinter as tkinter
-    import Tix as tix
+    import Tix as ttix
 else:
     import tkinter
-    import tkinter.tix as tix
+    import tkinter.tix as ttix
 
 
 def X_is_running():
@@ -66,4 +66,4 @@ def create_tixtk():
     @return         main window
     """
     global _has_x_server
-    return tix.Tk() if _has_x_server else tix.Tcl()
+    return ttix.Tk() if _has_x_server else ttix.Tcl()
