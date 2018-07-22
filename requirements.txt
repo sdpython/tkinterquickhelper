@@ -1,5 +1,6 @@
 coverage
 jyquickhelper
+Pillow
 pyquickhelper>=1.8
 solar_theme
 wheel
