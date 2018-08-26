@@ -154,4 +154,5 @@ if not r:
         package_dir=package_dir,
         package_data=package_data,
         ext_modules=[],
+        setup_requires=["pyquickhelper"],
         install_requires=["pyquickhelper"])
