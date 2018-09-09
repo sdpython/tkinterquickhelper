@@ -43,8 +43,7 @@ tkinterquickhelper documentation
 `wheel <http://www.xavierdupre.fr/site2013/index_code.html#tkinterquickhelper>`_,
 `travis <https://travis-ci.org/sdpython/tkinterquickhelper>`_,
 :ref:`l-README`,
-:ref:`blog <ap-main-0>`,
-:ref:`l-issues-todolist`
+:ref:`blog <ap-main-0>`
 
 What is it?
 -----------
@@ -54,7 +53,9 @@ It implements custom windows with tkinter.
 .. toctree::
     :maxdepth: 1
 
+    all_indexes
     blog/blogindex
+    HISTORY
 
 Installation
 ------------
