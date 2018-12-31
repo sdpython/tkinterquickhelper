@@ -13,7 +13,7 @@ from pyquickhelper.loghelper.flog import guess_machine_parameter
 
 def get_function_list(module):
     """
-    Extract all functions in a module
+    Extracts all functions in a module.
 
     @param      module      a object module
     @return                 the list of function included in a module, dictionary { name, object }
@@ -41,9 +41,8 @@ def has_unknown_parameters(func):
 
 def extract_function_information(function):
     """
-    Extract information about a function
-
-    @warning We assume all parameters receive a default value.
+    Extracts information about a function.
+    The function assumes all parameters receive a default value.
 
     @param          function        function object
     @return                         dictionary { info : value }
@@ -79,6 +78,8 @@ def extract_function_information(function):
     typ = {}
     p = {}
     for pos, a in enumerate(par):
+        if a == 'fLOG':
+            continue
         p2 = pos - dec
         if p2 >= 0:
             b = defd[p2]
@@ -101,7 +102,10 @@ def extract_function_information(function):
     alls = regex.findall(res["help"])
     p = {}
     for a, b in alls:
-        p[a.strip()] = b.strip()
+        a = a.strip()
+        if a == "fLOG":
+            continue
+        p[a] = b.strip()
     res["helpparam"] = p
 
     typstr = str  # unicode#
@@ -110,7 +114,8 @@ def extract_function_information(function):
         "@" + "param +([a-zA-Z_][a-zA-Z_0-9]*?) +[(]([a-zA-Z]+?)[)]")
     alls = reg.findall(res["help"])
     typ = {k: v for k, v in alls}
-    for a in res["types"]:
+    keys = list(res["types"])
+    for a in keys:
         b = res["types"][a]
         if b is None or isinstance(None, b):
             b = typ.get(a, None)
@@ -126,23 +131,20 @@ def extract_function_information(function):
                 else:
                     res["types"][a] = eval(b)
 
-    for a, b in res["types"].items():
+    # If no default value, we assume the type is str.
+    keys = list(res["types"])
+    for a in keys:
+        b = res["types"][a]
         if b is None:
-            file = res["module"].__file__ if res[
-                "module"] is not None else "unknown"
-            mes = "no defined type for function %s, parameter %s\n  File \"%s\", line 1" % (
-                res["name"], a, file)
-            raise TypeError(mes)
+            res[b] = str
 
     return res
 
 
 def private_adjust_parameters(param):
     """
-    change the value of some parameters when they are NULL
-        - user
-
-    changes the parameters inplace.
+    Change the value of some parameters when they are NULL:
+    *user*. Changes the parameters inplace.
 
     @param      param       list of parameters
     """
@@ -154,7 +156,7 @@ def private_adjust_parameters(param):
 
 def private_get_function(function_name):
     """
-    return the function object from its name, the name
+    Returns the function object from its name, the name
     must contains a dot "." otherwise the function will assume
     it is defined in module @see md default_functions.
 

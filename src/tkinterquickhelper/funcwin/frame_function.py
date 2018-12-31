@@ -26,11 +26,11 @@ else:
 class FrameFunction(tkinter.Frame):
     """
     Creating a Frame window for a function.
-
     It will create an entry control for every parameter.
     If one of the parameter is 'password', the window will show only stars.
-    The windows proposes to store the value and to restore them on the next call.
-    This functionality is disable when 'password' is present in the list of parameters.
+    The windows proposes to store the value and to restore them on the
+    next call. This functionality is disable when 'password' is present
+    in the list of parameters.
     """
 
     def __init__(self, parent, function, restore=True, width=100, raise_exception=False,
@@ -140,7 +140,14 @@ class FrameFunction(tkinter.Frame):
                 self.info["param"][a] = b
                 self.types[a] = type(b)
 
-        params = list(inspect.signature(function).parameters.keys())
+        sig = inspect.signature(function)
+        params = list(_ for _ in sig.parameters.keys() if _ not in ('fLOG',))
+        if len(params) == 0:
+            raise ValueError(
+                "Unable to extract any parameter from function '{0}'.".format(function))
+        if params == ['args']:
+            raise ValueError("Extracted weird parameters from function '{0}' (only {1})\nSIG={2}.".format(
+                function, params, sig))
         self._added = [_ for _ in self.info["param"] if _ not in params]
 
         self.fpar.bind('<Return>', self.run_function)
@@ -219,7 +226,7 @@ class FrameFunction(tkinter.Frame):
 
     def update(self):
         """
-        update the parameters (ie ``self.info``)
+        Updates the parameters (ie ``self.info``).
         """
         typstr = str  # unicode#
         for k in self.input:
@@ -228,7 +235,8 @@ class FrameFunction(tkinter.Frame):
 
     def history_up(self, *args):
         """
-        look back in the history of used parameters and change the parameters
+        Looks back in the history of used parameters and
+        change the parameters.
         """
         if len(self._history) > 0:
             self._hpos = (self._hpos + 1) % len(self._history)
@@ -237,7 +245,8 @@ class FrameFunction(tkinter.Frame):
 
     def history_down(self, *args):
         """
-        look forward in the history of used parameters and change the parameters
+        Looks forward in the history of used parameters
+        and change the parameters.
         """
         if len(self._history) > 0:
             self._hpos = (
@@ -247,7 +256,7 @@ class FrameFunction(tkinter.Frame):
 
     def stop_thread(self):
         """
-        stops the function execution
+        Stops the function execution.
         """
         if "thread_started" in self.__dict__:
             for th in self.thread_started:
@@ -259,12 +268,11 @@ class FrameFunction(tkinter.Frame):
 
     def destroy(self):
         """
-        Stops the thread and destroy the function
-
+        Stops the thread and destroy the function.
         The behaviour of method
         `Thread._stop <http://hg.python.org/cpython/file/3.4/Lib/threading.py>`_
         changed in Python 3.4,
-        see the `discussion <https://groups.google.com/forum/#!topic/comp.lang.python/sXXwTh9EHsI>`_.
+        See the `discussion <https://groups.google.com/forum/#!topic/comp.lang.python/sXXwTh9EHsI>`_.
         """
         self.stop_thread()
         if self.command_leave is not None:
@@ -291,7 +299,7 @@ class FrameFunction(tkinter.Frame):
 
     def get_parameters(self):
         """
-        returns the parameters in a dictionary
+        Returns the parameters in a dictionary.
 
         @return     dictionary
         """
@@ -313,7 +321,7 @@ class FrameFunction(tkinter.Frame):
 
     def refresh(self):
         """
-        refresh the screen
+        Refreshes the screen.
         """
         temp = self.LOG.get("0.0", "end")
         log = GetLogFile().getvalue()
@@ -334,7 +342,7 @@ class FrameFunction(tkinter.Frame):
 
     def run_function(self, *args):
         """
-        run the function
+        Runs the function.
         """
         if self.hide:
             self.parent.withdraw()
@@ -415,7 +423,7 @@ class FrameFunction(tkinter.Frame):
 class FrameFunction_ThreadFunction (threading.Thread):
 
     """
-    class associated to FrameFunction, it runs the function
+    Class associated to FrameFunction, it runs the function
     in a separate thread (in order to be able to stop its execution
     from the interface).
     """
@@ -465,11 +473,13 @@ class FrameFunction_ThreadFunction (threading.Thread):
 def open_window_function(func, top_level_window=None, params=None,
                          key_save="f", do_not_open=False):
     """
-    Open a tkinter window to run a function. It adds entries for the parameters,
+    Opens a :epkg:`tkinter` window to run a function.
+    It adds entries for the parameters,
     it displays the help associated to this function,
     and it allows use to run the function in a window frame.
     Logs are also displayed.
-    It also memorizes the latest values used (stored in ``<user>/TEMP folder``).
+    It also memorizes the latest values used
+    (stored in ``<user>/TEMP folder``).
 
     @param      func                    function (function object)
     @param      top_level_window        if you want this window to depend on a top level window from tkinter

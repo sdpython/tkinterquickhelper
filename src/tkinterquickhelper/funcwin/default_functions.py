@@ -21,7 +21,9 @@ _keep_var_character = re.compile("[^a-zA-Z0-9_]")
 
 
 def _clean_name_variable(st):
-    """clean a string
+    """
+    Cleans a string.
+
     @param      st      string to clean
     @return             another string
     """
@@ -63,7 +65,7 @@ def test_regular_expression(exp=".*", text="", fLOG=fLOG):
 
 def IsEmptyString(s):
     """
-    tells if a string is empty
+    Tells if a string is empty.
 
     @param      s       string
     @return             boolean
@@ -75,7 +77,7 @@ def IsEmptyString(s):
 
 def is_empty_string(s):
     """
-    tells if a string is empty
+    Tells if a string is empty.
 
     @param      s       string
     @return             boolean
@@ -89,7 +91,7 @@ def file_head(file="",
               head=1000,
               out=""):
     """
-    keep the head of a file
+    Keeps the head of a file.
 
     @param      file        file name
     @param      head        number of lines to keep
@@ -116,7 +118,7 @@ def file_head(file="",
 
 def file_split(file="", nb=2, out="", header=False, rnd=False):
     """
-    Keeps the head of a file.
+    Splits a file.
 
     @param      file        file name or stream
     @param      nb          number of files
@@ -187,7 +189,7 @@ def file_split(file="", nb=2, out="", header=False, rnd=False):
 
 def file_list(folder, out=""):
     """
-    prints the list of files and sub files in a text file
+    Prints the list of files and sub files in a text file.
 
     @param      folder      folder
     @param      out         result
@@ -218,7 +220,7 @@ def file_list(folder, out=""):
 
 def file_grep(file="", regex=".*", out="", head=-1):
     """
-    grep
+    Grep.
 
     @param      file        file name
     @param      regex        regular expression

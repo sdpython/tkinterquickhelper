@@ -1,6 +1,6 @@
 """
 @file
-@brief shortcuts to funcwin
+@brief shortcuts to *funcwin*
 """
 from .frame_params import open_window_params
 from .frame_function import open_window_function
@@ -10,7 +10,7 @@ from .patchs_windows import fix_python35_dll
 
 def check_icon():
     """
-    checks the ico was installed with the module
+    Checks the ico was installed with the module.
 
     @return     boolean
     """

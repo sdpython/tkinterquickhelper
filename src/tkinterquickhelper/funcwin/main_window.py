@@ -21,15 +21,14 @@ else:
 class MainFrame(tkinter.Frame):
 
     """
-    Creating a Frame window to select within a list of functions
+    Creates a Frame window to select within a list of functions,
+    @see cl FrameFunction.
+    The class requires to run ``tix.Tk()`` and not ``tkinter.Tk()``.
+    Otherwise, you will see the following error:
 
-    @see cl FrameFunction
+    ::
 
-    The class requires to run ``tix.Tk()`` and not ``tkinter.Tk()``. Otherwise,
-    you will see the following error:
-    @code
-    _tkinter.TclError: invalid command name "tixComboBox"
-    @endcode
+        _tkinter.TclError: invalid command name "tixComboBox"
 
     It is required by the use of ``ComboBox``.
     @see fn main_loop_functions to see what the window will look like.
@@ -38,7 +37,6 @@ class MainFrame(tkinter.Frame):
     def __init__(self, parent, functions, first=None, restore=True, width=100,
                  raise_exception=False, overwrite=None, hide=False):
         """
-        constructor
         @param      parent          window parent
         @param      functions       dictionary with a list of functions { name: function }
         @param      first           first function to select
@@ -103,14 +101,14 @@ class MainFrame(tkinter.Frame):
 
     def get_title(self):
         """
-        return the default title
+        Returns the default title.
         @return     string
         """
         return self.frameWindow.get_title()
 
     def change_frame_function(self, function):
         """
-        update the frame FrameWindow to select a new function
+        Updates the frame @see cl FrameFunction to select a new function.
 
         @param    function      a function (a pointer)
         """
@@ -120,8 +118,7 @@ class MainFrame(tkinter.Frame):
         if hasattr(self, "frameWindow"):
             self.frameWindow.pack_forget()
 
-        self.frameWindow = FrameFunction(self.ffun,
-                                         function,
+        self.frameWindow = FrameFunction(self.ffun, function,
                                          restore=self.params["restore"],
                                          width=self.params["width"],
                                          raise_exception=self.params[
@@ -134,7 +131,7 @@ class MainFrame(tkinter.Frame):
 
     def change_selection(self, event):
         """
-        functions called when the selection changes
+        Functions called when the selection changes.
         """
         st = self.varcombo.get()
         if "functionsDict" in self.__dict__:
@@ -145,7 +142,7 @@ def main_loop_functions(functions, first=None, restore=True, width=100,
                         raise_exception=False, overwrite=None, hide=False, title=None,
                         ico=None, init_pos=None, mainloop=True):
     """
-    uses @see cl MainFrame as the main window
+    Uses @see cl MainFrame as the main window.
 
     @param      functions       dictionary with a list of functions { name: function }
     @param      first           first function to select
@@ -163,15 +160,14 @@ def main_loop_functions(functions, first=None, restore=True, width=100,
     .. exref::
         :title: Open a window to run a function from a predefined list of functions
 
-        @code
-        functions = {   "test_regular_expression":test_regular_expression,
-                        "test_edit_distance":file_grep,
-                        "file_head":file_head }
-        main_loop_functions ( functions, title = "title: TestMakeWindow2")
-        @endcode
+        ::
+
+            functions = {"test_regular_expression":test_regular_expression,
+                         "test_edit_distance":file_grep,
+                         "file_head":file_head }
+            main_loop_functions(functions, title="title: TestMakeWindow2")
 
         @image images/open_functionl.png
-
     """
     if overwrite is None:
         overwrite = {}

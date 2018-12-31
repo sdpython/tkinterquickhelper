@@ -35,7 +35,7 @@ def X_is_running():
 
 def has_x_server():
     """
-    detects the presences of X server
+    Detects the presences of X server.
     """
     if sys.platform.startswith("win"):
         return True

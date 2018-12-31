@@ -2,7 +2,7 @@
 """
 @file
 
-@brief  defines @see cl FrameParams
+@brief  Defines @see cl FrameParams.
 """
 import sys
 import os
@@ -18,17 +18,11 @@ else:
 
 class FrameParams(tkinter.Frame):
     """
-    Creates a Frame window for a list of parameters
+    Creates a Frame window for a list of parameters.
     """
 
-    def __init__(self, parent,
-                 restore=True,
-                 width=100,
-                 raise_exception=False,
-                 params=None,
-                 help="",
-                 key_save="",
-                 command_leave=None):
+    def __init__(self, parent, restore=True, width=100, raise_exception=False,
+                 params=None, help="", key_save="", command_leave=None):
         """
         @param      parent          window parent
         @param      restore         if True, check if existing saved parameters are present
@@ -310,17 +304,14 @@ class FrameParams(tkinter.Frame):
             return param
 
 
-def open_window_params(params,
-                       help_string="",
-                       title="",
-                       top_level_window=None,
-                       key_save="",
-                       do_not_open=False):
+def open_window_params(params, help_string="", title="", top_level_window=None,
+                       key_save="", do_not_open=False):
     """
-    Open a tkinter window to set up parameters.
+    Open a :epkg:`tkinter` window to set up parameters.
     It adds entries for the parameters,
     it displays the help given to this function.
-    It also memorizes the latest values used (stored in <user>/TEMP folder).
+    It also memorizes the latest values used
+    (stored in `<user>/TEMP` folder).
 
     @param      help_string             help to de displayed
     @param      top_level_window        if you want this window to depend on a top level window from tkinter
@@ -339,11 +330,12 @@ def open_window_params(params,
     .. exref::
         :title: Open a tkinter window to ask parameters to a user
 
-        @code
-        params = { "user": os.environ.get("USERNAME", os.environ["USER"]),
-                "password":"" }
-        newparams = open_window_params (params, title="try the password *", help_string = "unit test", key_save="my_key")
-        @endcode
+        ::
+
+            params = { "user": os.environ.get("USERNAME", os.environ["USER"]),
+                    "password":"" }
+            newparams = open_window_params(params, title="try the password *",
+                                           help_string="unit test", key_save="my_key")
 
         The program opens a window like the following one:
 
@@ -355,13 +347,7 @@ def open_window_params(params,
         to store the values for the parameters used in previous execution.
 
     Password are not stored in a text file. You must type them again next time.
-
-    .. versionchanged:: 1.0
-        Parameter *do_not_open* was added.
     """
-    return FrameParams.open_window(params=params,
-                                   help_string=help_string,
-                                   title=title,
-                                   top_level_window=top_level_window,
-                                   key_save=key_save,
+    return FrameParams.open_window(params=params, help_string=help_string, title=title,
+                                   top_level_window=top_level_window, key_save=key_save,
                                    do_not_open=do_not_open)

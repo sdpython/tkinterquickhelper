@@ -18,8 +18,9 @@ if sys.version_info[0] == 2:
 
 def _private_store(function_name, param):
     """
-    Store the parameters into a file, the function adds the parameter in a new line.
-    It a parameter is a password (name=password, the password will be encrypted using sha1).
+    Stores the parameters into a file, the function adds the
+    parameter in a new line. It a parameter is a password
+    (*name=password*, the password will be encrypted using sha1).
 
     @param      function_name       name of the function (a unique string, the function is not called)
     @param      param               (dict) list of parameters
@@ -81,8 +82,9 @@ def _private_store(function_name, param):
 
 def _private_restore(function_name, pwd=True):
     """
-    restore the parameters stored by _private_store,
-    returns a list of dictionaries (one of each line stored by _private_store
+    Restores the parameters stored by *_private_store*,
+    returns a list of dictionaries (one of each line stored
+    by *_private_store*).
 
     @param      function_name       name of the function (a unique string, the function is not called)
     @param      pwd                 empty every password
@@ -125,7 +127,8 @@ def _private_restore(function_name, pwd=True):
 
 def get_icon():
     """
-    returns a filename corresponding the tkinterquickhelper icon
+    Returns a filename corresponding the tkinterquickhelper icon.
+
     @return     filename
     """
     ico = os.path.realpath(
