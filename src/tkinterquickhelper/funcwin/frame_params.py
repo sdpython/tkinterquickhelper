@@ -6,14 +6,10 @@
 """
 import sys
 import os
+import tkinter
 from .tk_window import create_tk
 from .function_helper import private_adjust_parameters
 from .storing_functions import _private_restore, _private_store, interpret_parameter
-
-if sys.version_info[0] == 2:
-    import Tkinter as tkinter
-else:
-    import tkinter
 
 
 class FrameParams(tkinter.Frame):
@@ -22,7 +18,7 @@ class FrameParams(tkinter.Frame):
     """
 
     def __init__(self, parent, restore=True, width=100, raise_exception=False,
-                 params=None, help="", key_save="", command_leave=None):
+                 params=None, help="", key_save="", command_leave=None):  # pylint: disable=W0622
         """
         @param      parent          window parent
         @param      restore         if True, check if existing saved parameters are present

@@ -7,7 +7,6 @@ import sys
 import re
 import inspect
 import datetime
-
 from pyquickhelper.loghelper.flog import guess_machine_parameter
 
 

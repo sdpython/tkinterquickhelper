@@ -7,20 +7,13 @@ import sys
 import os
 import inspect
 import threading
-
+import tkinter
+import tkinter.font as tkFont
+from io import StringIO
 from pyquickhelper.loghelper.flog import fLOG, GetLogFile
 from .tk_window import create_tk
 from .function_helper import has_unknown_parameters, extract_function_information, private_adjust_parameters, private_get_function
 from .storing_functions import _private_restore, _private_store, interpret_parameter
-
-if sys.version_info[0] == 2:
-    import Tkinter as tkinter
-    import tkFont
-    from StringIO import StringIO
-else:
-    import tkinter
-    import tkinter.font as tkFont
-    from io import StringIO
 
 
 class FrameFunction(tkinter.Frame):

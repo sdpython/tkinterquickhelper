@@ -46,20 +46,16 @@ class TestCodeStyle(unittest.TestCase):
                                   'R0913', 'R0914', 'R0915', 'R1702', 'R1705',
                                   'W0613',
                                   'W0123', 'W0212', 'W0703', 'W0201'),
-                   skip=["tp_transfer_files.py:376: [E731]",
-                         "_nbconvert_config.py:",
-                         "Redefining built-in 'open'",
-                         "Redefining built-in 'help'",
+                   skip=["_nbconvert_config.py:",
                          #
-                         "Uses of a deprecated module 'tkinter.tix'",
-                         "Unable to import 'Tix'",
                          "Redefining name 'fLOG'",
-                         "Unable to import 'tkFont'",
-                         "Unable to import 'StringIO'",
                          "tk_window.py:56",
                          "tk_window.py:68",
                          "function_helper.py:122",
-                         "Unable to import 'Tkinter'"])
+                         "Unable to import 'Tkinter'",
+                         "tk_window.py:50: W0603",
+                         "tk_window.py:62: W0603",
+                         ])
 
     def test_code_style_test(self):
         fLOG(
@@ -85,12 +81,8 @@ class TestCodeStyle(unittest.TestCase):
                          "skip___' imported but unused",
                          "[E402] module ",
                          "imported as skip_",
-                         "Unable to import 'StringIO'",
-                         "Redefining built-in 'open'",
                          "Unused variable 'fig'",
-                         "Redefining built-in 'FileNotFoundError'",
                          "test_windows_autopy3.py:",
-                         "Unable to import 'Tkinter'",
                          "Unused import src",
                          ])
 

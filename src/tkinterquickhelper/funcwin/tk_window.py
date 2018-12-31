@@ -3,15 +3,9 @@
 @file
 @brief  Handles window `Tk <https://docs.python.org/3.4/library/tkinter.html#tkinter.Tk>`_
 """
-
 import sys
-
-if sys.version_info[0] == 2:
-    import Tkinter as tkinter
-    import Tix as ttix
-else:
-    import tkinter
-    import tkinter.tix as ttix
+import tkinter
+import tkinter.tix as ttix  # pylint: disable=W0402
 
 
 def X_is_running():

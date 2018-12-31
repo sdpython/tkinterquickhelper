@@ -3,7 +3,6 @@
 @file
 @brief  Common functions used for @see cl FrameFunction and @see cl FrameParams.
 """
-import sys
 import os
 import copy
 import datetime
@@ -11,9 +10,6 @@ import hashlib
 
 from pyquickhelper.loghelper.convert_helper import str2datetime
 from pyquickhelper.loghelper.flog import fLOG, guess_machine_parameter
-
-if sys.version_info[0] == 2:
-    from codecs import open
 
 
 def _private_store(function_name, param):

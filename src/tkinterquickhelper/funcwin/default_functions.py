@@ -8,13 +8,8 @@ import sys
 import os
 import re
 import random
-
 from pyquickhelper.loghelper.flog import fLOG, GetSepLine
 from pyquickhelper.filehelper.synchelper import explore_folder_iterfile
-
-
-if sys.version_info[0] == 2:
-    from codecs import open
 
 
 _keep_var_character = re.compile("[^a-zA-Z0-9_]")

@@ -5,17 +5,13 @@
 @brief  building windows to use a function and specify its parameter based on a python function
 """
 import os
-import sys
+import warnings
+import tkinter
+import tkinter.tix as ttix  # pylint: disable=W0402
+from tkinter import TclError
 from .tk_window import create_tixtk
 from .frame_function import FrameFunction
 from .storing_functions import get_icon
-
-if sys.version_info[0] == 2:
-    import Tkinter as tkinter
-    import Tix as ttix
-else:
-    import tkinter
-    import tkinter.tix as ttix
 
 
 class MainFrame(tkinter.Frame):
@@ -174,7 +170,10 @@ def main_loop_functions(functions, first=None, restore=True, width=100,
 
     ico = get_icon() if ico is None else ico
     root = create_tixtk()
-    root.iconbitmap(ico)
+    try:
+        root.iconbitmap(ico)
+    except TclError:
+        warnings.warn("Unable to load icon '{0}'".format(ico))
     fr = MainFrame(parent=root, functions=functions, first=first, restore=restore,
                    width=width, raise_exception=raise_exception, overwrite=overwrite,
                    hide=hide)
