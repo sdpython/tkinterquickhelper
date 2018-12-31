@@ -7,14 +7,9 @@ import unittest
 import warnings
 import threading
 import time
+from tkinter import TclError
 from pyquickhelper.loghelper.flog import fLOG
 from pyquickhelper.pycode import get_temp_folder
-
-
-if sys.version_info[0] == 2:
-    from Tkinter import TclError
-else:
-    from tkinter import TclError
 
 try:
     import src

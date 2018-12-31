@@ -6,12 +6,8 @@ import os
 import sys
 import unittest
 import warnings
+from tkinter import TclError
 from pyquickhelper.loghelper.flog import fLOG
-
-if sys.version_info[0] == 2:
-    from Tkinter import TclError
-else:
-    from tkinter import TclError
 
 try:
     import src
