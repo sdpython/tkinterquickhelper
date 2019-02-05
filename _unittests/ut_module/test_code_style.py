@@ -55,6 +55,7 @@ class TestCodeStyle(unittest.TestCase):
                          "Unable to import 'Tkinter'",
                          "tk_window.py:50: W0603",
                          "tk_window.py:62: W0603",
+                         "R1720",
                          ])
 
     def test_code_style_test(self):
@@ -84,6 +85,7 @@ class TestCodeStyle(unittest.TestCase):
                          "Unused variable 'fig'",
                          "test_windows_autopy3.py:",
                          "Unused import src",
+                         "R1720",
                          ])
 
 
