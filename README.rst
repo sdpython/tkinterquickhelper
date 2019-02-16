@@ -1,9 +1,4 @@
 
-.. _l-README:
-
-README
-======
-
 .. image:: https://travis-ci.org/sdpython/tkinterquickhelper.svg?branch=master
     :target: https://travis-ci.org/sdpython/tkinterquickhelper
     :alt: Build status
@@ -37,10 +32,18 @@ README
 .. image:: https://codecov.io/github/sdpython/tkinterquickhelper/coverage.svg?branch=master
     :target: https://codecov.io/github/sdpython/tkinterquickhelper?branch=master
 
-**Links:**
+.. _l-README:
+
+tkinterquickhelper
+==================
+
+This modules implements a couple of custom windows with *tkinter*.
+The main one is a way to create a form which contains an entry for
+each arguments of a function and populates them with default
+values if any.
 
 * `GitHub/tkinterquickhelper <https://github.com/sdpython/tkinterquickhelper>`_
 * `documentation <http://www.xavierdupre.fr/app/tkinterquickhelper/helpsphinx/index.html>`_
 * `Blog <http://www.xavierdupre.fr/app/tkinterquickhelper/helpsphinx/blog/main_0000.html#ap-main-0>`_
 
-This modules implements a couple of custom windows with *tkinter*.
+.. image:: http://www.xavierdupre.fr/app/tkinterquickhelper/helpsphinx/_images/open_functionl.png
