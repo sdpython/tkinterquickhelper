@@ -45,10 +45,10 @@ tkinterquickhelper documentation
 :ref:`l-README`,
 :ref:`blog <ap-main-0>`
 
-What is it?
------------
-
-It implements custom windows with tkinter.
+Implements custom windows with
+`tkinter <https://docs.python.org/3/library/tk.html>`_,
+mostly one window which adds an entry for every parameter
+of a function before running it.
 
 .. toctree::
     :maxdepth: 1
