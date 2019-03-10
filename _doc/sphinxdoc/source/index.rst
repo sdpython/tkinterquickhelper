@@ -56,14 +56,7 @@ of a function before running it.
     all_indexes
     blog/blogindex
     HISTORY
-
-Installation
-------------
-
-``pip install tkinterquickhelper``
-
-Indices and tables
-------------------
+    indexmenu
 
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`l-modules`     |  :ref:`l-functions` | :ref:`l-classes`    | :ref:`l-methods`   | :ref:`l-staticmethods` | :ref:`l-properties`                            |
@@ -72,11 +65,3 @@ Indices and tables
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`genindex`      |  :ref:`l-FAQ2`      | :ref:`l-notebooks`  | :ref:`l-NB2`       | :ref:`l-statcode`      | `Unit Test Coverage <coverage/index.html>`_    |
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
-
-Navigation
-----------
-
-.. toctree::
-    :maxdepth: 1
-
-    indexmenu
