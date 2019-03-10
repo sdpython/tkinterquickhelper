@@ -22,6 +22,7 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 matplotlib autopy3 pylzma pillow"
   - "%PYTHON%\\Scripts\\pip install pyquickhelper"
   - "%PYTHON%\\Scripts\\pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master"
+  - "%PYTHON%\\Scripts\\pip install git+https://github.com/sdpython/nbconvert.git@fixes"
   - "dir %PYTHON%\\Scripts"
   - "%PYTHON%\\Scripts\\jupyter-nbextension enable --py --sys-prefix widgetsnbextension"
 
