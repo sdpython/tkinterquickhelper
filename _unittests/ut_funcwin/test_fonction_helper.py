@@ -1,29 +1,13 @@
 """
 @brief      test log(time=1s)
 """
-import os
-import sys
 import unittest
 import datetime
 from pyquickhelper.loghelper.flog import fLOG
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-from src.tkinterquickhelper.funcwin.function_helper import extract_function_information
-from src.tkinterquickhelper.funcwin.default_functions import file_grep
-from src.tkinterquickhelper import check
-from src.tkinterquickhelper.funcwin.storing_functions import _private_store, _private_restore, interpret_parameter
+from tkinterquickhelper.funcwin.function_helper import extract_function_information
+from tkinterquickhelper.funcwin.default_functions import file_grep
+from tkinterquickhelper import check
+from tkinterquickhelper.funcwin.storing_functions import _private_store, _private_restore, interpret_parameter
 
 
 class TestFonctionHelper (unittest.TestCase):

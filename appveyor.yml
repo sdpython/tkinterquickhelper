@@ -25,6 +25,7 @@ install:
   - "%PYTHON%\\Scripts\\pip install git+https://github.com/sdpython/nbconvert.git@fixes"
   - "dir %PYTHON%\\Scripts"
   - "%PYTHON%\\Scripts\\jupyter-nbextension enable --py --sys-prefix widgetsnbextension"
+  - set PYTHONPATH=src
 
 build: off
 

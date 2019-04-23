@@ -10,20 +10,6 @@ from pyquickhelper import __file__ as PYQ
 from pyquickhelper.pycode.call_setup_hook import call_setup_hook, call_setup_hook_cmd
 
 
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-
 class TestCallSetupHook(unittest.TestCase):
 
     def test_call_setup_hook_cmd(self):

@@ -10,21 +10,7 @@ import time
 from tkinter import TclError
 from pyquickhelper.loghelper.flog import fLOG
 from pyquickhelper.pycode import get_temp_folder
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-from src.tkinterquickhelper.funcwin import main_loop_functions
+from tkinterquickhelper.funcwin import main_loop_functions
 
 
 def my_tst_function2(a, b):
@@ -44,9 +30,6 @@ class TestWindowsAutopy3(unittest.TestCase):
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
-
-        if sys.version_info[0] == 2:
-            return
 
         try:
             import autopy3

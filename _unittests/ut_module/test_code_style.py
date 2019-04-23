@@ -10,20 +10,6 @@ from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import check_pep8
 
 
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-
 class TestCodeStyle(unittest.TestCase):
 
     def test_code_style_src(self):
@@ -76,15 +62,8 @@ class TestCodeStyle(unittest.TestCase):
                    pylint_ignore=('C0111', 'C0103', 'R0914', 'W0212', 'C0413', 'W0621',
                                   'W0703', 'W0622', 'W0122', 'R0912', 'R0201',
                                   'R0915', 'C1801'),
-                   skip=["src' imported but unused",
-                         "skip_' imported but unused",
-                         "skip__' imported but unused",
-                         "skip___' imported but unused",
-                         "[E402] module ",
-                         "imported as skip_",
-                         "Unused variable 'fig'",
+                   skip=["[E402] module ",
                          "test_windows_autopy3.py:",
-                         "Unused import src",
                          "R1720",
                          ])
 

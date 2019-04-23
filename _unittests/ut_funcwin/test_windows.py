@@ -1,29 +1,14 @@
 """
 @brief      test log(time=1s)
 """
-import os
-import sys
 import unittest
 import warnings
 from tkinter import TclError
 from pyquickhelper.loghelper.flog import fLOG
 from pyquickhelper.pycode import fix_tkinter_issues_virtualenv
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-from src.tkinterquickhelper.funcwin import open_window_params, open_window_function
-from src.tkinterquickhelper.funcwin.function_helper import get_function_list, private_get_function
+from tkinterquickhelper.funcwin import open_window_params, open_window_function
+from tkinterquickhelper.funcwin.function_helper import get_function_list, private_get_function
+import tkinterquickhelper
 
 
 def my_tst_function(a, b):
@@ -53,7 +38,7 @@ class TestWindows (unittest.TestCase):
         fLOG(type(win))
         assert isinstance(
             win,
-            src.tkinterquickhelper.funcwin.frame_params.FrameParams)
+            tkinterquickhelper.funcwin.frame_params.FrameParams)
 
     def test_open_window_function(self):
         fLOG(
@@ -70,7 +55,7 @@ class TestWindows (unittest.TestCase):
         fLOG(type(win))
         assert isinstance(
             win,
-            src.tkinterquickhelper.funcwin.frame_function.FrameFunction)
+            tkinterquickhelper.funcwin.frame_function.FrameFunction)
         win.refresh()
         win.update()
         win.run_function(0, 1)
@@ -81,7 +66,7 @@ class TestWindows (unittest.TestCase):
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
         fix_tkinter_issues_virtualenv(fLOG=fLOG)
-        funcs = get_function_list(src.tkinterquickhelper)
+        funcs = get_function_list(tkinterquickhelper)
         assert isinstance(funcs, dict)
         assert len(funcs) > 0
         f = private_get_function("os.listdir")

@@ -6,33 +6,12 @@ import sys
 import unittest
 import io
 import warnings
-from pyquickhelper.loghelper import fLOG
-
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-from src.tkinterquickhelper.funcwin.default_functions import _clean_name_variable, _get_format_zero_nb_integer, file_list, file_split
+from tkinterquickhelper.funcwin.default_functions import _clean_name_variable, _get_format_zero_nb_integer, file_list, file_split
 
 
 class TestMissingFuncWin (unittest.TestCase):
 
     def test_missing_funcwin_file_list(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         assert _clean_name_variable("s-6") == "s_6"
         assert _get_format_zero_nb_integer(5006) == "%04d"
         ioout = io.StringIO()
@@ -41,11 +20,6 @@ class TestMissingFuncWin (unittest.TestCase):
         assert len(s) > 0
 
     def test_missing_funcwin_file_split(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         assert _clean_name_variable("s-6") == "s_6"
         assert _get_format_zero_nb_integer(5006) == "%04d"
         ioout = [io.StringIO(), io.StringIO()]
