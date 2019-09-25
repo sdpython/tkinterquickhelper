@@ -2,6 +2,7 @@ coverage
 jyquickhelper
 git+https://github.com/sdpython/nbconvert.git@fixes
 Pillow
+pylint>=2.4.1
 pyquickhelper>=1.8
 solar_theme
 wheel
