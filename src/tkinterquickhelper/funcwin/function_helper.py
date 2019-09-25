@@ -112,7 +112,7 @@ def extract_function_information(function):
     reg = re.compile(
         "@" + "param +([a-zA-Z_][a-zA-Z_0-9]*?) +[(]([a-zA-Z]+?)[)]")
     alls = reg.findall(res["help"])
-    typ = {k: v for k, v in alls}
+    typ = {k: v for k, v in alls}  # pylint: disable=R1721
     keys = list(res["types"])
     for a in keys:
         b = res["types"][a]
