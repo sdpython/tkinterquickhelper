@@ -250,7 +250,7 @@ class FrameParams(tkinter.Frame):
                     key_save="",
                     do_not_open=False):
         """
-        Opens a :pkg:`tkinter` window to set up parameters.
+        Opens a :epkg:`tkinter` window to set up parameters.
         It adds entries for the parameters,
         it displays the help given to this function.
         It also memorizes the latest values used (stored in ``<user>/TEMP folder``).
