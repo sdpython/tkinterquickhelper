@@ -198,14 +198,9 @@ def file_list(folder, out=""):
     else:
         f = out
 
-    if sys.version_info[0] == 2:
-        for l in explore_folder_iterfile(folder):
-            f.write(l.decode("utf8"))
-            f.write(GetSepLine().decode("utf8"))
-    else:
-        for l in explore_folder_iterfile(folder):
-            f.write(l)
-            f.write(GetSepLine())
+    for li in explore_folder_iterfile(folder):
+        f.write(li)
+        f.write(GetSepLine())
 
     if isinstance(out, typstr):
         f.close()
