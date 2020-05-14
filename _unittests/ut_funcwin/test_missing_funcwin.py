@@ -34,8 +34,8 @@ class TestMissingFuncWin (unittest.TestCase):
         nb = file_split(os.path.abspath(__file__), out=ioout, header=False)
         size = os.stat(os.path.abspath(__file__)).st_size
         sa = 0
-        for l in ioout:
-            s = l.getvalue()
+        for li in ioout:
+            s = li.getvalue()
             assert len(s) > 0
             sa += len(s)
         assert 0 < sa <= size
