@@ -4,7 +4,6 @@
 @brief  various basic functions often needed
 """
 
-import sys
 import os
 import re
 import random
