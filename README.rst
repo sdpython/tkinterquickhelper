@@ -28,6 +28,10 @@
 .. image:: https://codecov.io/github/sdpython/tkinterquickhelper/coverage.svg?branch=master
     :target: https://codecov.io/github/sdpython/tkinterquickhelper?branch=master
 
+.. image:: https://img.shields.io/github/repo-size/sdpython/tkinterquickhelper
+    :target: https://github.com/sdpython/tkinterquickhelper/
+    :alt: size
+
 .. _l-README:
 
 tkinterquickhelper

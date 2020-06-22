@@ -33,6 +33,10 @@ tkinterquickhelper documentation
     .. image:: https://codecov.io/github/sdpython/tkinterquickhelper/coverage.svg?branch=master
         :target: https://codecov.io/github/sdpython/tkinterquickhelper?branch=master
 
+    .. image:: https://img.shields.io/github/repo-size/sdpython/tkinterquickhelper
+        :target: https://github.com/sdpython/tkinterquickhelper/
+        :alt: size
+
 **Links:** `pypi <https://pypi.python.org/pypi/tkinterquickhelper/>`_,
 `github <https://github.com/sdpython/tkinterquickhelper>`_,
 `documentation <http://www.xavierdupre.fr/app/tkinterquickhelper/helpsphinx/index.html>`_,
