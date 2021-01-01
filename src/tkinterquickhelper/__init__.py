@@ -5,7 +5,7 @@
 Helpers for :epkg:`*py:tkinter`.
 """
 
-__version__ = "1.6.93"
+__version__ = "1.6.103"
 __author__ = "Xavier Dupré"
 __github__ = "https://github.com/sdpython/tkinterquickhelper"
 __url__ = "http://www.xavierdupre.fr/app/tkinterquickhelper/helpsphinx/index.html"
