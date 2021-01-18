@@ -118,7 +118,7 @@ if is_local():
         additional_notebook_path=["pyquickhelper"],
         unittest_modules=["pyquickhelper"],
         fLOG=logging_function, github_owner="sdpython",
-        covtoken=("7809a446-a94a-4155-833d-091ad8f63367", "'_UT_37_std' in outfile"))
+        covtoken=("7809a446-a94a-4155-833d-091ad8f63367", "'_UT_39_std' in outfile"))
     if not r and not ({"bdist_msi", "sdist",
                        "bdist_wheel", "publish", "publish_doc", "register",
                        "upload_docs", "bdist_wininst", "build_ext"} & set(sys.argv)):
