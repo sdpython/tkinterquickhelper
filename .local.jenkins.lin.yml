@@ -14,6 +14,9 @@ install:
   - $PYINT --version
   - $PYINT -m pip freeze
 
+before_script:
+  - $PYINT -u setup.py write_version
+
 script:
   - { CMD: "$PYINT -u setup.py unittests --covtoken=7809a446-a94a-4155-833d-091ad8f63367", NAME: "UT", TIMEOUT: 900 }
   - { CMD: "$PYINT -u setup.py unittests_SKIP", NAME: "UT_SKIP", TIMEOUT: 900 }
