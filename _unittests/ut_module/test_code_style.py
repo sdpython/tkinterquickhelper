@@ -30,7 +30,7 @@ class TestCodeStyle(unittest.TestCase):
                                   'E0203',
                                   'R0201', 'R0901', 'R0902', 'R0911', 'R0912',
                                   'R0913', 'R0914', 'R0915', 'R1702', 'R1705',
-                                  'W0613', 'C0415',
+                                  'W0613', 'C0415', 'R1732',
                                   'W0123', 'W0212', 'W0703', 'W0201'),
                    skip=["_nbconvert_config.py:",
                          #
@@ -61,7 +61,7 @@ class TestCodeStyle(unittest.TestCase):
                    max_line_length=200,
                    pylint_ignore=('C0111', 'C0103', 'R0914', 'W0212', 'C0413', 'W0621',
                                   'W0703', 'W0622', 'W0122', 'R0912', 'R0201',
-                                  'R0915', 'C1801', 'C0415'),
+                                  'R0915', 'C1801', 'C0415', 'R1732'),
                    skip=["[E402] module ",
                          "test_windows_autopy3.py:",
                          "R1720",
