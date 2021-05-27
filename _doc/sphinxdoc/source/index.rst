@@ -4,8 +4,8 @@ tkinterquickhelper documentation
 
 .. only:: html
 
-    .. image:: https://travis-ci.org/sdpython/tkinterquickhelper.svg?branch=master
-        :target: https://travis-ci.org/sdpython/tkinterquickhelper
+    .. image:: https://travis-ci.com/sdpython/tkinterquickhelper.svg?branch=master
+        :target: https://travis-ci.com/sdpython/tkinterquickhelper
         :alt: Build Status Linux
 
     .. image:: https://ci.appveyor.com/api/projects/status/oqqayew2qan2bh6h?svg=true
@@ -41,7 +41,7 @@ tkinterquickhelper documentation
 `github <https://github.com/sdpython/tkinterquickhelper>`_,
 `documentation <http://www.xavierdupre.fr/app/tkinterquickhelper/helpsphinx/index.html>`_,
 `wheel <http://www.xavierdupre.fr/site2013/index_code.html#tkinterquickhelper>`_,
-`travis <https://travis-ci.org/sdpython/tkinterquickhelper>`_,
+`travis <https://travis-ci.com/sdpython/tkinterquickhelper>`_,
 :ref:`l-README`,
 :ref:`blog <ap-main-0>`
 
