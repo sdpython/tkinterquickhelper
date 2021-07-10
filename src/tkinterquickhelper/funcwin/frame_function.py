@@ -64,9 +64,8 @@ class FrameFunction(tkinter.Frame):
         # retieve previous answers
         self._history = []
         self._hpos = -1
-        typstr = str  # unicode#
 
-        if isinstance(function, typstr):
+        if isinstance(function, str):
             if self.hide:
                 fLOG(__file__, function)  # , OutputPrint = False)
             else:
@@ -98,7 +97,7 @@ class FrameFunction(tkinter.Frame):
         for k in self.info["param"]:
             self.types[k] = self.info["types"][k]
             if self.types[k] in [None, None.__class__]:
-                self.types[k] = typstr
+                self.types[k] = str
 
         tlab = tkinter.Label(self.fdoc, text="Help")
         tlab.pack(side=tkinter.LEFT)
@@ -161,7 +160,7 @@ class FrameFunction(tkinter.Frame):
 
             lab.grid(row=line, column=1)
             if self.info["param"][k] is not None:
-                lab.insert("0", typstr(self.info["param"][k]))
+                lab.insert("0", str(self.info["param"][k]))
             self.input[k] = lab
             objs.append(lab)
             line += 1
@@ -180,7 +179,7 @@ class FrameFunction(tkinter.Frame):
 
             lab.grid(row=line, column=1)
             if self.info["param"][k] is not None:
-                lab.insert("0", typstr(self.info["param"][k]))
+                lab.insert("0", str(self.info["param"][k]))
             self.input[k] = lab
             objs.append(lab)
             line += 1
@@ -221,10 +220,9 @@ class FrameFunction(tkinter.Frame):
         """
         Updates the parameters (ie ``self.info``).
         """
-        typstr = str  # unicode#
-        for k in self.input:
+        for k in self.input:  # pylint: disable=C0206
             self.input[k].delete(0, tkinter.END)
-            self.input[k].insert("0", typstr(self.info["param"].get(k, "")))
+            self.input[k].insert("0", str(self.info["param"].get(k, "")))
 
     def history_up(self, *args):
         """

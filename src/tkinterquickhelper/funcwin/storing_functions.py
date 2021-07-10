@@ -69,10 +69,9 @@ def _private_store(function_name, param):
 
     history.append(param)
 
-    typstr = str  # unicode#
     with open(filename, "w", encoding="utf8") as f:
         for param_ in history:
-            spar = typstr(param_).replace("\n", "#*###n####*#")
+            spar = str(param_).replace("\n", "#*###n####*#")
             f.write(spar + "\n")
 
 
@@ -140,8 +139,6 @@ def interpret_parameter(ty, s):
     @param      s       value to interpret (a string)
     @return             value
     """
-    typstr = str  # unicode#
-
     try:
         if ty in [bool]:
             return s in [True, "True", "true", "TRUE", "1", 1]
@@ -152,7 +149,7 @@ def interpret_parameter(ty, s):
                 return str2datetime(s)
         elif ty in [int, float]:
             return ty(s)
-        elif ty == typstr:
+        elif ty == str:
             if s is None or len(s) == 0 or s == "None":
                 return None
             else:

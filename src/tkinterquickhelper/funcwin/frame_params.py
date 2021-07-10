@@ -56,7 +56,6 @@ class FrameParams(tkinter.Frame):
                      "help": help, "key_save": key_save}
 
         objs = []
-        typstr = str  # unicode#
 
         if restore:
             self._history = _private_restore(
@@ -68,7 +67,7 @@ class FrameParams(tkinter.Frame):
         for k in self.info["param"]:
             self.types[k] = self.info["param"][k].__class__
             if self.types[k] in [None, None.__class__]:
-                self.types[k] = typstr
+                self.types[k] = str
 
         # documentation
         tlab = tkinter.Label(self.fdoc, text="Help")
@@ -99,7 +98,7 @@ class FrameParams(tkinter.Frame):
 
             lab.grid(row=line, column=1)
             if self.info["param"][k] is not None:
-                lab.insert("0", typstr(self.info["param"][k]))
+                lab.insert("0", str(self.info["param"][k]))
             self.input[k] = lab
             objs.append(lab)
             line += 1
@@ -118,7 +117,7 @@ class FrameParams(tkinter.Frame):
 
             lab.grid(row=line, column=1)
             if self.info["param"][k] is not None:
-                lab.insert("0", typstr(self.info["param"][k]))
+                lab.insert("0", str(self.info["param"][k]))
             self.input[k] = lab
             objs.append(lab)
             line += 1
@@ -156,10 +155,9 @@ class FrameParams(tkinter.Frame):
         """
         update the parameters (ie ``self.info``)
         """
-        typstr = str  # unicode#
-        for k in self.input:
+        for k in self.input:  # pylint: disable=C0206
             self.input[k].delete(0, tkinter.END)
-            self.input[k].insert("0", typstr(self.info["param"].get(k, "")))
+            self.input[k].insert("0", str(self.info["param"].get(k, "")))
 
     def history_up(self, *args):
         """

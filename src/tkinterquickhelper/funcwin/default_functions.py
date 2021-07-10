@@ -28,7 +28,6 @@ def _clean_name_variable(st):
 
 
 def _get_format_zero_nb_integer(nb):
-    typstr = str  # unicode#
     h = nb
     c = 0
     while h > 0:
@@ -36,8 +35,8 @@ def _get_format_zero_nb_integer(nb):
         c += 1
     if c > 20:
         raise Exception(
-            "this should not be that high %s (nb=%s)" % (typstr(c), typstr(nb)))
-    return "%0" + typstr(int(c)) + "d"
+            "this should not be that high %s (nb=%s)" % (str(c), str(nb)))
+    return "%0" + str(int(c)) + "d"
 
 
 def test_regular_expression(exp=".*", text="", fLOG=fLOG):
@@ -133,8 +132,7 @@ def file_split(file="", nb=2, out="", header=False, rnd=False):
         raise ValueError("%d should be present in out='{0}'".format(out))
 
     size = os.stat(file).st_size
-    typstr = str  # unicode#
-    f = open(file, "r") if isinstance(file, typstr) else file
+    f = open(file, "r") if isinstance(file, str) else file
     g = {}
     tot = 0
     last_line = 0
@@ -144,7 +142,7 @@ def file_split(file="", nb=2, out="", header=False, rnd=False):
             for n in range(0, nb):
                 if n not in g:
                     if isinstance(out, list):
-                        if isinstance(out[n], typstr):
+                        if isinstance(out[n], str):
                             g[n] = open(out[n], "w")
                         else:
                             g[n] = out[n]
@@ -161,7 +159,7 @@ def file_split(file="", nb=2, out="", header=False, rnd=False):
 
         if n not in g:
             if isinstance(out, list):
-                if isinstance(out[n], typstr):
+                if isinstance(out[n], str):
                     g[n] = open(out[n], "w")
                 else:
                     g[n] = out[n]
@@ -173,10 +171,10 @@ def file_split(file="", nb=2, out="", header=False, rnd=False):
             fLOG("    processed ", i, " bytes ", tot,
                  " out of ", size, " lines in ", out)
 
-    if isinstance(file, typstr):
+    if isinstance(file, str):
         f.close()
     for k, v in g.items():
-        if not isinstance(out, list) or isinstance(out[k], typstr):
+        if not isinstance(out, list) or isinstance(out[k], str):
             v.close()
     return last_line
 
@@ -189,8 +187,7 @@ def file_list(folder, out=""):
     @param      out         result
     @return                 out
     """
-    typstr = str  # unicode#
-    if out is None or isinstance(out, typstr):
+    if out is None or isinstance(out, str):
         if is_empty_string(out):
             out = "%s_.list_of_files.txt" % folder
         f = open(out, "w")
@@ -201,7 +198,7 @@ def file_list(folder, out=""):
         f.write(li)
         f.write(GetSepLine())
 
-    if isinstance(out, typstr):
+    if isinstance(out, str):
         f.close()
 
     return out
