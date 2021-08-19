@@ -26,10 +26,6 @@ tkinterquickhelper documentation
         :alt: GitHub Issues
         :target: https://github.com/sdpython/tkinterquickhelper/issues
 
-    .. image:: https://requires.io/github/sdpython/tkinterquickhelper/requirements.svg?branch=master
-         :target: https://requires.io/github/sdpython/tkinterquickhelper/requirements/?branch=master
-         :alt: Requirements Status
-
     .. image:: https://codecov.io/github/sdpython/tkinterquickhelper/coverage.svg?branch=master
         :target: https://codecov.io/github/sdpython/tkinterquickhelper?branch=master
 
