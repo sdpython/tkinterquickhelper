@@ -1,6 +1,6 @@
 
 .. image:: https://travis-ci.com/sdpython/tkinterquickhelper.svg?branch=master
-    :target: https://travis-ci.com/sdpython/tkinterquickhelper
+    :target: https://app.travis-ci.com/github/sdpython/tkinterquickhelper
     :alt: Build status
 
 .. image:: https://ci.appveyor.com/api/projects/status/oqqayew2qan2bh6h?svg=true
