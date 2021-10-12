@@ -47,7 +47,7 @@ def create_tk():
 
     @return         main window
     """
-    global _has_x_server
+    global _has_x_server  # pylint: disable=W0602
     return tkinter.Tk() if _has_x_server else tkinter.Tcl()
 
 
@@ -59,5 +59,5 @@ def create_tixtk():
 
     @return         main window
     """
-    global _has_x_server
+    global _has_x_server  # pylint: disable=W0602
     return ttix.Tk() if _has_x_server else ttix.Tcl()
