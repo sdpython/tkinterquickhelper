@@ -10,7 +10,7 @@ from pyquickhelper.helpgen.default_conf import set_sphinx_variables
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0])))
 
-set_sphinx_variables(__file__, "tkinterquickhelper", "Xavier Dupré", 2021,
+set_sphinx_variables(__file__, "tkinterquickhelper", "Xavier Dupré", 2022,
                      "solar_theme", solar_theme.theme_path, locals(),
                      github_repo="https://github.com/sdpython/tkinterquickhelper.git",
                      extlinks=dict(issue=(
