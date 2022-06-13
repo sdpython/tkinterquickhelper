@@ -20,8 +20,7 @@ class TestCodeStyle(unittest.TestCase):
         src_ = os.path.normpath(os.path.join(thi, "..", "..", "src"))
         check_pep8(src_, fLOG=fLOG,
                    pylint_ignore=('C0103', 'C1801',
-                                  'E0203',
-                                  'R0201', 'R0901', 'R0902', 'R0911', 'R0912',
+                                  'E0203', 'R0901', 'R0902', 'R0911', 'R0912',
                                   'R0913', 'R0914', 'R0915', 'R1702', 'R1705',
                                   'W0613', 'C0415', 'R1732', 'W1514', 'R1735',
                                   'W0123', 'W0212', 'W0703', 'W0201', 'C0209'),
@@ -48,7 +47,7 @@ class TestCodeStyle(unittest.TestCase):
         check_pep8(test, fLOG=fLOG, neg_pattern="temp_.*",
                    max_line_length=200,
                    pylint_ignore=('C0111', 'C0103', 'R0914', 'W0212', 'C0413', 'W0621',
-                                  'W0703', 'W0622', 'W0122', 'R0912', 'R0201', 'R1735',
+                                  'W0703', 'W0622', 'W0122', 'R0912', 'R1735',
                                   'R0915', 'C1801', 'C0415', 'R1732', 'W1514', 'C0209'),
                    skip=["[E402] module ",
                          "test_windows_autopy3.py:",
