@@ -14,7 +14,8 @@ set_sphinx_variables(__file__, "tkinterquickhelper", "Xavier Dupré", 2022,
                      "solar_theme", solar_theme.theme_path, locals(),
                      github_repo="https://github.com/sdpython/tkinterquickhelper.git",
                      extlinks=dict(issue=(
-                         'https://github.com/sdpython/tkinterquickhelper/issues/%s', 'issue {0} on GitHub')),
+                         'https://github.com/sdpython/tkinterquickhelper/issues/%s',
+                         'issue %s on GitHub')),
                      link_resolve="http://www.xavierdupre.fr/app/")
 
 html_logo = "phdoc_static/project_ico.png"
