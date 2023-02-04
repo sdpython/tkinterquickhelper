@@ -115,7 +115,7 @@ def _private_restore(function_name, pwd=True):
                     ev["password"] = ""
             ans.append(ev)
     except Exception as e:
-        raise Exception("problem in file " + filename) from e
+        raise RuntimeError("problem in file " + filename) from e
 
     return ans
 

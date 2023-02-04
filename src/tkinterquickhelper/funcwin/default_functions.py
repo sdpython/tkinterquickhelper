@@ -23,7 +23,7 @@ def _clean_name_variable(st):
     """
     res = _keep_var_character.split(st)
     if res is None:
-        raise Exception("unable to clean " + st)
+        raise ValueError("unable to clean " + st)
     return "_".join(res)
 
 
@@ -34,7 +34,7 @@ def _get_format_zero_nb_integer(nb):
         h = int(h / 10)
         c += 1
     if c > 20:
-        raise Exception(
+        raise ValueError(
             "this should not be that high %s (nb=%s)" % (str(c), str(nb)))
     return "%0" + str(int(c)) + "d"
 
@@ -93,7 +93,7 @@ def file_head(file="",
     @return                 out
     """
     if not os.path.exists(file):
-        raise Exception("unable to find file %s" % file)
+        raise FileNotFoundError("unable to find file %s" % file)
     if IsEmptyString(out):
         f, ext = os.path.splitext(file)
         out = "%s.head.%d%s" % (file, head, ext)
@@ -123,7 +123,7 @@ def file_split(file="", nb=2, out="", header=False, rnd=False):
     @return                 number of processed lines
     """
     if not os.path.exists(file):
-        raise Exception("unable to find file %s" % file)
+        raise FileNotFoundError("unable to find file %s" % file)
 
     if is_empty_string(out):
         f, ext = os.path.splitext(file)
@@ -216,7 +216,7 @@ def file_grep(file="", regex=".*", out="", head=-1):
     @return                 out
     """
     if not os.path.exists(file):
-        raise Exception("unable to find file %s" % file)
+        raise FileNotFoundError("unable to find file %s" % file)
     if IsEmptyString(out):
         f, ext = os.path.splitext(file)
         out = "%s.regex.%d%s" % (file, head, ext)

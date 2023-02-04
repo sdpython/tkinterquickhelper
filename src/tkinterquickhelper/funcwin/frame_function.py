@@ -253,7 +253,7 @@ class FrameFunction(tkinter.Frame):
             for th in self.thread_started:
                 if th.is_alive():
                     if not th.daemon:
-                        raise Exception(
+                        raise RuntimeError(
                             "the thread is not daemon, this case should not happen")
                     th._stop()
 

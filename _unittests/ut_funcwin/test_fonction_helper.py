@@ -24,7 +24,7 @@ class TestFonctionHelper (unittest.TestCase):
             fLOG("--", k, res["param"][k], "-", res["types"][k])
         typstr = str  # unicode#
         if res["types"]["file"] != typstr:
-            raise Exception(
+            raise AssertionError(
                 "type should be str not {0}\nres={1}".format(res["types"]["file"], res))
 
     def test_check(self):
@@ -52,7 +52,7 @@ class TestFonctionHelper (unittest.TestCase):
         _private_store(fname, params)
         params2 = _private_restore(fname)[0]
         if params2 != params:
-            raise Exception("diff\n{0}\n{1}".format(params, params2))
+            raise AssertionError("diff\n{0}\n{1}".format(params, params2))
 
     def test_interpret_parameter(self):
         fLOG(
@@ -61,7 +61,7 @@ class TestFonctionHelper (unittest.TestCase):
             OutputPrint=__name__ == "__main__")
         typstr = str  # unicode#
         if interpret_parameter(typstr, "er") != "er":
-            raise Exception(interpret_parameter(typstr, "er"))
+            raise AssertionError(interpret_parameter(typstr, "er"))
         assert interpret_parameter(int, "0") == 0
         assert interpret_parameter(float, "1.3") == 1.3
         assert interpret_parameter(bool, 1)
@@ -74,7 +74,7 @@ class TestFonctionHelper (unittest.TestCase):
         assert interpret_parameter(datetime.datetime, "None") is None
         r = interpret_parameter(datetime.datetime, "2015-02-03")
         if r != datetime.datetime(2015, 2, 3):
-            raise Exception(r)
+            raise AssertionError(r)
         assert interpret_parameter(object, "['3']") == ['3']
 
 
